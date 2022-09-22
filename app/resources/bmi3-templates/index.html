@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BMI3 Homepage</title>
+    <meta content="website" property="og:type" />
+    <meta data-siteId="ms-compbio-2" id="siteId" />
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="{% static 'css/bmi3_main.min.css' %}" media="screen" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/bmi3_print.min.css' %}" media="print" rel="stylesheet" type="text/css" />
+
+    <script>
+        var dataLayer = window.dataLayer = window.dataLayer || [];
+    </script>
+    <script>
+        var siteId = document.getElementById('siteId').getAttribute('data-siteId');
+        var siteName = siteId.replace(/\-\d{1,2}$/, '');
+        dataLayer.push({
+            'siteId': siteId,
+            'siteName': siteName,
+            'cms': 'cascade'
+        });
+    </script>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+            j.async = true;
+            j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5Q36JQ');
+    </script>
+</head>
+
+<body class="no-js">
+    <div id="container">
+        <header>
+            <div class="roof invert" style="background-color: white;padding-top: 12pt;padding-bottom: 12pt;">
+                <div style="text-align: center;vertical-align: middle;">
+                    <img src="{% static 'images/zje-logo-color.png' %}"
+                        style="height:20pt;display: block;margin: auto;margin-left: 0; margin-right: 0;">
+                    <a class="wordmark">BMI3</a>
+                </div>
+            </div>
+            <div id="sitename">
+                <h1><a href="#">BMI3: Biomedical Informatics 3 (2022 Fall)</a></h1>
+            </div>
+
+        </header>
+
+        <div id="content">
+            <script type="text/javascript">
+                function addLoadEvent(func) {
+                    var oldonload = window.onload;
+                    if (typeof window.onload != 'function') {
+                        window.onload = func;
+                    } else {
+                        window.onload = function () {
+                            if (oldonload) {
+                                oldonload();
+                            }
+                            func();
+                        }
+                    }
+                }
+            </script>
+
+
+            <div class="content js-list grid">
+                <div>
+                    <h2><span>Course learing objectives</span></h2>
+                    <p>Biomedical Informatics 3 provides students the opportunity to develop their skills and
+                        understanding of two key themes: algorithms in biomedical informatics and image analysis. The
+                        course will provide a solid theoretical foundation
+                        on various algorithms, with an emphasis how these algorithms can be applied to biomedical
+                        problems. The second theme of the course is image analysis, as biomedical research and clinical
+                        image data is increasingly requiring quantitative
+                        processing and analysis skills. The course will both provide basics of microscopy and introduce
+                        staticly-used software with the aim of highlighting key steps of image processing and analysis
+                        where information loss or distortion
+                        may occur. As image analysis staticly requires application of various algorithms, the practicals
+                        of this course specifically aim to bridge the gap between the theoretical knowledge and
+                        application of algorithms. To facilitate the
+                        students’ skills for the application of algorithms for biomedical data analysis and to improve
+                        their problem-solving skills, the course also introduces sessions for advancing communication
+                        with biomedical scientists and software
+                        engineers.</p>
+                </div>
+                <div class="resource">
+                    <h2><span>Resources</span></h2>
+                    <ul>
+                        <li> <a href="./course-handbook"> Course handbook </a> </li>
+                        <li> <a href="./calendar"> Calendar </a> </li>
+                        <!-- <li> <a href="  % url 'bmi3:practical' 0 %} "> Practicals </a> </li> /!-->
+                        <!-- <li> <a style="cursor: not-allowed;"> Practicals </a> <span>Not available yet</span> </li> -->
+                        <li> <a href="./textbooks"> Textbooks </a> </li>
+                        <!-- <li> <a style="cursor: not-allowed;"> Course Team </a> <span>Not available yet</span> </li> -->
+                        <li> <a href="./team"> Course Team </a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="grid column2 boxes js-list" style="background-color: #072E5C;">
+
+                <h1 style="color:white"> Syllabus at a Glance </h1>
+
+                <div>
+                    <h2><span>Algorithms<br /></span></h2>
+                    <ul>
+                        <li>Algorithms and Complexity</li>
+                        <li>Intro to Data Structure</li>
+                        <li>Exhaustive Search</li>
+                        <li>Greedy Algorithms</li>
+                        <li>Graph Algorithms</li>
+                        <li>Dynamic Programming</li>
+                        <li>String Algorithms and Combinatorial Pattern Matching</li>
+                        <li>Divide-and-Conquer Algorithms</li>
+                        <li>Randomized Algorithms</li>
+                        <li>Clustering</li>
+                        <li>Dimensionality reduction</li>
+                        <li>Hidden Markov Models</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2><span>Workshops<br /></span></h2>
+                    <ul>
+                        <li>Numpy, Pandas, advanced coding practices in python</li>
+                        <li>Communication and professionalism 1; Live stream programming in python;
+                            Intro to LaTeX</li>
+                        <li>How to debug</li>
+                        <li>Communication and professionalism 2: Towards the next step in your
+                            bioinformatics career</li>
+                        <li>Communication and professionalism 3: research seminar and career sharing
+                            by bioinformatics researcher in Tencent AI Lab</li>
+                        <li>Review Sessions & mock exam</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid column2 boxes  js-list">
+
+                <h1> In-Course Assessments (ICAs, 50%), Mini-project </h1>
+                <p>
+                    The ‘mini-project’ involves choosing and solving a more elaborate problem (group-based
+                    projects, assessed based on a reflective written report (individual mark) 20%, source code
+                    (group mark) 10%, and oral presentation 20% (group mark)).
+                </p>
+                <br>
+                <ol>
+
+
+                </ol>
+                <h1> Finals (50%) open book coding challenges </h1>
+                <p>
+                    An open-book, computer-based timed exam during the final week, in which you will solve simple
+                    real-life problems, and write simple algorithms (individual, 50%).
+                </p>
+                <ol>
+
+                </ol>
+                <h1> For more information, please contact the TAs: </h1>
+                <br>
+                <ol>
+                    <li>Ziwei, <a href="mailto:xueziwei@zju.edu.cn" class="link_in_text"> 📧 xueziwei@zju.edu.cn</a>
+                    </li>
+                    <li>Ruonan, <a href="mailto:ruonan.21@intl.zju.edu.cn" class="link_in_text"> 📧
+                            ruonan.21@intl.zju.edu.cn</a></li>
+                    <li>Pengwei, <a href="mailto:pengwei.19@intl.zju.edu.cn" class="link_in_text"> 📧
+                            pengwei.19@intl.zju.edu.cn</a></li>
+                    <li>Zhejian, <a href="mailto:zhejian.19@intl.zju.edu.cn" class="link_in_text"> 📧
+                            zhejian.19@intl.zju.edu.cn</a></li>
+                </ol>
+            </div>
+
+            <br>
+            <div class="grid column2 boxes  js-list">
+
+            </div>
+            <footer class="grid column3 invert" style="vertical-align: middle;">
+                <div style="margin-top: 0 auto;margin-bottom: 0 auto;">
+                    <p>
+                        A314, ZJU-UoE Institute, 
+                        718 East Haizhou Rd., 
+                        Haining, Zhejiang 314400, 
+                        China
+                    </p>
+                    <!-- <img src="{% static 'images/ZJEBuilding.png" style="zoom:30%"> <-->
+                </div>
+                <div>
+
+                </div>
+
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="{% static 'js/bmi3_list.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bmi3_jquery-1.10.1.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bmi3_main.min.js' %}" type="text/javascript"></script>
+
+</body>
+
+</html>

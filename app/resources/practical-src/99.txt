@@ -1,0 +1,89 @@
+                            <h1>Practicals</h1>
+                            <p> Practical sessions will take place on Thursday. Practical sessions will take place between 14:00-16:50. These are computer practical sessions. Please bring a laptop. If you do not have a laptop, or if your laptop is broken, please contact the course organizers immediately, so we can make alternative arrangements.Occasionally, we will use practical sessions for other activities, for instance tutorials, project presentations and so on. Please check your e-mails and Blackboard Learn for information on timetables and rooms. </p>
+                            <p> Just like a laboratory practical, you need to document your work done in a computer practical. This is not done by using a physical lab book, but by keeping electronic records. You may want to keep those records on your own computer and keep track of changes using git, or you may choose to have a public portfolio on GitHub. It is up to you. In this course, your portfolio is not assessed. However, you may later find it useful (both during the revision stage of this course, and in later years) to go through your code from this course again. Therefore, make sure that your code is well- organized, well-documented and suitably backed up. </p>
+                            <p> In this course, most of the programming tasks covered in practical sessions will be completed with <code>Python</code> language unless the instructor has other instruction. Please check your e-mails and Blackboard Learn for information. </p>
+                            <h1><span>Python </span></h1>
+                            <p> You'll implement all the practicals in <code>Python 3.9</code>. The Python web site contains lots of tutorial information. You can check your Python version by running <code>python3 --version </code></p>.
+                            <p>
+                                We recommend that you work on the practicals on your own machine, so you can use the tools, text editors, etc. that you are already familiar with. Alternatively, you can work on the labs on the ZJE server.
+                            </p>
+                            <div class="hidden" id="termynal" data-termynal>
+                                <span data-ty="input"> </span>
+                            </div>
+                            <h2><span>MacOS</span></h2>
+                            <pre><code>wget https://www.python.org/ftp/python/3.9.6/python-3.9.6-macosx10.9.pkg</code></pre>
+                            <h2><span>Linux</span></h2>
+                            Depending on your Linux distribution, you might be able to get an up-to-date version of Python from the package repository, e.g. by running <code>apt install python3</code>. Alternatively, you may want to compile from source.
+                            <pre><code>wget https://www.python.org/ftp/python/3.9.6/Python-3.9.6.tgz<br>tar -zxvf Python-3.9.6.tgz<br>cd Python-3.9.6<br>./configure<br>make && make altinstall</code></pre> Note that some development librarys should be
+                            preinstalled before compiling Python from source, e.g. by running <code>sudo yum groupinstall -y "Development Tools"</code> in CentOS.
+                            <h2><span>Windows</span></h2>
+                            You may download python from the Python official website.
+                            <pre><code>https://www.python.org/downloads/release/python-396/</code></pre>
+                            <h1><span>IDE</span></h1>
+                            <p>An integrated development environment is a software application that provides comprehensive facilities to computer programmers for software development. Here we recommend some useful IDEs for Python:</p>
+                            <ul>
+                                <li> <a href="https://www.sublimetext.com/download">Sublime Text 4</a> Light text editor, with support on Python syntax extensions.</li>
+                                <li> <a href="https://code.visualstudio.com/">VSCode</a> Provides useful extensions for Python, including debuggers and testers.</li>
+                                <li> <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> Better for larger programs. </li>
+                            </ul>
+                            <h1>Python warm up</h1>
+                            <p>You can use <a href="/static/pdf/PythonCookbook.pdf"> Beazley D., Jones B. - Python cookbook-O'Reilly (2013).pdf </a> to familiar yourself with Python. In this section, we will go over key concepts of the Python
+                                programming language.</p>
+                            <p> You may also find the official Python <a href="https://docs.python.org/3/">documentation</a> and <a href="https://docs.python.org/3/tutorial/">tutorial</a> useful. </p>
+                            <h2>Numbers</h2>
+                            <p>
+                                There are three types of numeric literals: <b>integers</b>, <b>floating point numbers</b>, and <b>imaginary numbers</b>. There are no complex literals (complex numbers can be formed by adding a real number and an imaginary
+                                number). Note that numeric literals do not include a sign; a phrase like -1 is actually an expression composed of the unary operator '-' and the literal 1.
+                            </p>
+                            <p>Here are some examples:</p>
+                            <pre class="language-python hljs" lang="python"><code>a = 1
+b = .5
+print(a+b) # 1.5</code></pre>
+                            <h2>Strings and Bytes</h2>
+                            <p>Both strings or bytes of literals can be enclosed in matching single quotes (') or double quotes ("). They can also be enclosed in matching groups of three single or double quotes (these are generally referred to as triple-quoted
+                                strings). </p>
+                            <ul>
+                                <li>Byte objects are sequence of Bytes, whereas Strings are sequence of characters.</li>
+                                <li>Byte objects are in machine readable form internally, Strings are only in human readable form.</li>
+                                <li>Since Byte objects are machine readable, they can be directly stored on the disk.</li>
+
+                            </ul>
+                            <p>Here are some examples:</p>
+                            <pre class="language-python hljs" lang="python"><code>name = "Bob"
+print(f"He said his name is {repr(name)}.") # He said his name is 'Bob'.</code></pre>
+                            <h2>Functions</h2>
+                            <p> Defining functions using the def statement is a cornerstone of all programs. We recommend to use typehint in the function arguments, which is a good practice to write fluent and human readable programs. </p>
+                            <p>Example</p>
+                            <pre class="language-python hljs" lang="python"><code>def add(a:int, b:int)):
+&emsp;return a + b</code></pre>
+                            <p> In practice, you may want to use decorators to enforce type checking according to the type hints, e.g.</p>
+                            <pre class="language-python hljs" lang="python"><code>@typed
+def add(a:int, b:int)):
+&emsp;return a + b
+add(1,2)
+add(1,2.2) # TypeError: Argument b must be class int</code></pre>
+                            <p> See <a href="/static/src/python/typed.py">example implementation</a> of typed decorator</p>
+
+                            <p>Example</p>
+                            <p> Variadic arguments is supported in defining a function in Python. You can use <code>*args</code> or <code>**kwargs</code> to pass variable-number arguments in list-like or dict-like manners.</p>
+                            <pre class="language-python hljs" lang="python"><code>def avg(*args, **kwargs):
+&emsp;print(args)
+&emsp;print(kwargs)
+&emsp;return ((sum(args)/len(args)) + (sum(kwargs.values())/len(kwargs)))/ 2</code></pre>
+                            <p>In some algorithm design, you need to supply a short callback function for use with an operation such as <code>sort()</code>. In these situations, simple functions that do nothing more than evaluate an expression can be replaced
+                                by a lambda expression. </p>
+                            <pre class="language-python hljs" lang="python"><code>add = lambda x,y: x + y
+add(1,2) # 3</code></pre>
+                            <h2>Classes and objects </h2>
+                            <p> Classes are useful in designing algorithms and data structures. For example, we can define a 2d point as:</p>
+                            <pre class="language-python hljs" lang="python"><code>class Point:
+&emsp;def __init__(self, x:int, y:int):
+&emsp;&emsp;self.x = x
+&emsp;&emsp;self.y = y
+&emsp;def squared_euclidean_distance(self, other:Point):
+&emsp;&emsp;return (self.x - other.x) ** 2 + (self.y - other.y) ** 2
+                    </code></pre>
+                            <h1><img class="inline-flag" src="/static/images/github-vscode-icon.svg" style="width: 30pt; margin-right: 3pt;">Github</h1>
+                            <p> <a href=https://github.com/" target="_blank">Github</a> is your friend. </p>
+                            <h1>Python Styles</h1>
+                            <p> You may want to look at <a href="https://google.github.io/styleguide/pyguide.html" target="_blank">the Google Python Style Guide</a></p> for good programming practice.
